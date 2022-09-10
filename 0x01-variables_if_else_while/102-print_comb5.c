@@ -12,38 +12,28 @@ int main(void)
 int c;
 int d;
 int e;
-int f = 0;
-while (f < 10)
+int f;
+for (c = 0; c < 10; ++c)
 {
-e = 0;
-while (e < 10)
+for (d = 0; d < 10; ++d)
 {
-d = 0;
-while (d < 10)
+for (e = c; e < 10; ++e)
 {
-c = 0;
-while (c < 10)
+for (f = ((c == e) ? (d + 1) : 0); f < 10; ++f)
 {
-if (!(f == c && e == d))
-{
-putchar('0' + f);
-putchar('0' + e);
-putchar(' ');
-putchar('0' + d);
 putchar('0' + c);
-if (!(f + e == 18 && c + d == 17 && d == 9))
+putchar('0' + d);
+putchar(' ');
+putchar('0' + e);
+putchar('0' + f);
+if (c != 9 || d != 8 || e != 9 || f != 9)
 {
 putchar(',');
 putchar(' ');
 }
 }
-c++;
 }
-d++;
 }
-e++;
-}
-f++;
 }
 putchar('\n');
 return (0);
