@@ -1,14 +1,14 @@
 #include "main.h"
 /**
  * main - print_alphabet
- * Return: 0
+ * Return: void, and prints the alphabet on the standard output
  */
 void print_alphabet(void)
 {
-char c;
-for (c = 'a'; c <= 'z'; c++)
+int letterz = 'a';
+for (; letterz <= 'z'; letterz++)
 {
-_putchar(c);
+_putchar(letterz);
 }
 _putchar('\n');
 }
