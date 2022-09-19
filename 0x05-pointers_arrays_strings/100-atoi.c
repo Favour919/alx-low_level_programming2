@@ -8,28 +8,21 @@
 
 int _atoi(char *s)
 {
-unsigned int count = 0, size = 0, j = 0, k = 1, m = 1, i;
+int sign = 1, resp = 0, firstNum;
 
-while (*(s + count) != '\0')
+for (firstNum = 0; !(s[firstNum] >= 48 && s[firstNum] <= 57); firstNum++)
 {
-if (size > 0 && (*(s + count) < '0' || *(s + count) > '9'))
-break;
-
-if (*(s + count) == '-')
-k *= -1;
-
-if ((*(s + count) >= '0') && (*(s + count) <= '9'))
-if (size > 0)
-m *= 10;
-size++;
-}
-count++;
-}
-
-for (i = count - size; i < count; i++)
+if (s[firstNum] == '-')
 {
-j = j + ((*(s + i) - 48) * m);
-m /= 10;
+sign *= -1;
 }
-return (j * k);
+}
+
+for (int i = firstNum; s[i] >= 48 && s[i] <= 57; i++)
+{
+resp *= 10;
+resp += (s[i] - 48);
+}
+
+return (sign * resp);
 }
