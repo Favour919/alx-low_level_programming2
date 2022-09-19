@@ -1,26 +1,20 @@
 #include "main.h"
 
 /**
- * puts_half - prints half of a string.
- * @str: param
+ * puts2 - skips 2
+ * @str: string
  */
 
-void puts_half(char *str)
+void puts2(char *str)
 {
-int count = 0, i;
+int i;
 
-while (count >= 0)
+i = 0;
+while (str[i] != '\0')
 {
-if (str[count] == '\0')
-break;
-count++;
-}
-if (count % 2 == 1)
-i = count / 2;
-else
-i = (count - 1) / 2;
-
-for (i++; i < count; i++)
+if (i % 2 == 0)
 _putchar(str[i]);
+i++;
+}
 _putchar('\n');
 }
