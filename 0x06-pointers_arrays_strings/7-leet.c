@@ -8,23 +8,21 @@
 
 char *leet(char *s)
 {
-int count = 0, i;
-int lower_case[] = {97, 101, 111, 116, 108};
-int upper_case[] = {65, 69, 79, 84, 76};
-int numbers[] = {52, 51, 48, 55, 49}
+int i, ii;
+char s1[] = "aeotl";
+char S1[] = "AEOTL";
+char s2[] = "43071";
 
-while (*(s + count) != '\0')
+for (i = 0; s[i] != '\0'; i++)
 {
-for (i = 0; i < 5; i++)
+for (ii = 0; ii < 5; ii++)
 {
-if (*(s + count) == lower_case[i] || *(s + count) == upper_case[i])
+if (s[i] == s1[ii] || s[i] == S1[ii])
 {
-*(s + count) = numbers[i];
+s[i] = s2[ii];
 break;
 }
 }
-count++;
 }
-
 return (s);
 }
