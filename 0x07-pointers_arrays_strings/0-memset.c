@@ -1,6 +1,6 @@
 #include "main.h"
 /**
- * _memset -   fills memory with a constant byte
+ * _memset - fills memory with a constant byte
  * @s: pointer block of memory to fill
  * @b: value to set
  * @n: bytes of the memory
@@ -13,7 +13,7 @@ unsigned int i;
 
 for (i = 0; n > 0 ; i++, n--)
 {
-	s[i] = b;
+s[i] = b;
 }
 return (s);
 }
